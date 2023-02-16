@@ -1,0 +1,22 @@
+::Rotas_e_Views::
+ - Rotas são as urls do projeto -> /loja ; /blog ... Controlam o fluxo da aplicação 
+ - Rotas chamam as views que são as representações gráficas
+ - Nas views temos o template onde estruturamos a página
+ - Os templates renderizam os dados dinâmicos por meio de php
+
+::Blade::
+ - Blade é a template engine do Laravel
+ - Deixa as views dinâmicas
+ - Possibilita inserir tags HTML e também pegar e usar dados fornecidos pelo banco
+ - As views são renderizadas e responsabilidades do blade
+ - Executa PHP puro
+ - Escreve comentários nos arquivos de view
+ - Estruturas de repetição ( for e foreach as mais comuns)
+
+::Adicionando_arquivos_estaticos::
+ - CSS, Js, imagens, etc
+ - Laravel proporciona forma facilitada de inserir
+ - Todos os arquivos ficam na pasta public do projeto
+
+::Criando_layouts::
+ - reaproveitamento do código, exemplo header e footer
