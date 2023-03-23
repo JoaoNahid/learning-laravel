@@ -13,24 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $nome = 'Nahid';
-    $idade = 20;
-    $arr = [1,2,3,4,5];
-    $my_full_name = ['João', 'Eduardo', 'de', 'Godoi', 'Nahid'];
-    $args = [
-        'nome' => $nome, 
-        'idade' => $idade,
-        'profissao' => 'Web Dev',
-        'arr' => $arr,
-        'my_full_name' => $my_full_name
-    ];
-    return view('welcome', $args);
-});
+use App\Http\Controllers\EventController;
+
+Route::get('/', [EventController::class, 'index']);
 // html fica em /resources/contact.blade.php
 Route::get('/contact', function() {
     return view('contact');
 });
-Route::get('/product', function() {
-    return view('product');
+
+Route::get('/events/create', [EventController::class,  'create']);
+
+Route::get('/products', function() {
+    return view('products');
+});
+
+Route::get('/product/{id}/{category?}', function($id, $category = null){
+    // pegando query parameter --> http://127.0.0.1:8000/product/1/blusa?query=Nahid
+    $query = request('query');
+
+    return view('product', ['id'=> $id, 'category'=>$category, 'query' => $query]);
 });

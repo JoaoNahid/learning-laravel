@@ -20,3 +20,27 @@
 
 ::Criando_layouts::
  - reaproveitamento do código, exemplo header e footer
+
+::Parâmetros_nas_rotas::
+ - ao definir uma rota devemos passar o parametro desta forma: {id}
+ - pode ser opcional adicionando '?' após o parâmetro
+ - laravel aceita também query parameters: ?nome=Nahid&id=1
+
+::Controller::
+ - Fundamental no laravel, maior parte do código vai estar la
+ - Recebe e envia respostas para as views
+ - podem ser criados via artisan
+ - É comum retornar uma view ou redirecionar para uma URL pelo Controller
+ - Para criar um Controller automaticamente basta rodar 'php artisan make:controller <nome_do_controller_(EventController>)' no terminal
+
+::Conexão_com_Banco_de_Dados::
+ - Configurada pelo arquivo.env
+ - Utiliza ORM (Object-Relational Mapping) chamada Eloquent
+ - Utiliza migrations para criação das tabelas
+
+::Migrations::
+ - São como versionamento de banco de dados
+ - Podem avançar e retroceder a qualquer momento
+ - Adiciona e remove colunas com facilidade
+ - Fazer o setup de DB de uma nova instalação em apenas um comando
+ - Podemos verificar as migrations com migrate.status
